@@ -1,0 +1,31 @@
+<ion-header>
+  
+    <ion-navbar color="dark">
+      <ion-title>Register</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+  
+    <ion-list>
+  <!--Item for username-->
+    <ion-item>
+      <ion-label floating>Email address</ion-label>
+      <ion-input type="text" #username></ion-input>
+    </ion-item>
+  <!--Item for password-->
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" #password></ion-input>
+    </ion-item>
+  
+  </ion-list>
+  
+  <!--Button to register the user-->
+  <div padding>
+    <button block ion-button color="dark" (click)=registerUser()>Register</button>
+  </div>
+  
+  </ion-content>
