@@ -4,11 +4,11 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="home">
   <ion-grid *ngIf="weather">
     <ion-row>
       <ion-col width-50 offset-25>
-        <h2 class ="location">{{weather.display_location.full}}</h2>
+        <h2 class ="location">{{weather.display_location.city}}</h2>
         <div class="icon"><img src="{{weather.icon_url}}" alt=""></div>
         <h3 class = "desc">{{weather.weather}}</h3>
         <h1 class = "temp">{{weather.temp_c}}&deg;</h1>
@@ -16,9 +16,9 @@
     </ion-row>
     <ion-row>
       <ion-col width-100>
-        <ion-list>
+        <ion-list class="lista">
           <ion-item>
-            <strong>Temperature: </strong>{{weather.temperature_c}}
+            <strong>Temperature: </strong>{{weather.temperature_string}}
           </ion-item>
 
           <ion-item>
@@ -26,11 +26,15 @@
           </ion-item>
 
           <ion-item>
-            <strong>Feels like: </strong>{{weather.feelslike_c}}
+            <strong>Feels like: </strong>{{weather.feelslike_c}}&deg;
           </ion-item>
 
           <ion-item>
-            <strong>Wind: </strong>{{weather.wind_mph}}
+            <strong>Wind mph: </strong>{{weather.wind_mph}}
+          </ion-item>
+
+          <ion-item>
+            <strong>Local time: </strong>{{weather.local_time_rfc822}}
           </ion-item>
         </ion-list>
       </ion-col>

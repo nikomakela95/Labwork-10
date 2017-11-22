@@ -13,7 +13,7 @@
   </ion-header>
   
   
-  <ion-content padding>
+  <ion-content padding class = "home">
   
     <ion-grid>
       <ion-row>
@@ -22,21 +22,19 @@
             <form (ngSubmit)="saveForm()">
               <ion-item>
                 <ion-label fixed>
-                  City
+                  Country
                   </ion-label>
-                  <ion-input [(ngModel)]="city" name="city" type="text"></ion-input>
-                
+                  <ion-input [(ngModel)]="country" name="country" type="text"></ion-input>
               </ion-item>
   
               <ion-item>
                   <ion-label>
-                    State
+                    City      
                     </ion-label>
-                    <ion-input [(ngModel)]="state" name="state" type="text"></ion-input>
-                  
+                    <ion-input [(ngModel)]="city" name="city" type="text"></ion-input>
                 </ion-item>
   
-                <button ion-button type="submit" block>Save</button>
+                <button ion-button type="submit" block color="secondary">Save</button>
               
             </form>
           </ion-list>

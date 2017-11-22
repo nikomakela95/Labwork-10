@@ -10,19 +10,21 @@ import { HomePage } from '../home/home';
   templateUrl: 'settings.html',
 })
 export class SettingsPage {
-
+  country:string;
   city:string;
-  state:string;
+  //state:string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage:Storage ) {
     this.storage.get('location').then((val) =>{
       if(val != null){
         let location = JSON.parse(val);
+        //this.country = location.country;
         this.city = location.city;
-        this.state = location.state;
+        //this.state = location.state;
       }else{
-        this.city = 'Miami';
-        this.state = 'FL';
+        this.country = 'Finland';
+        this.city = 'Espoo';
+        //this.state = 'FL';
       }
     })
   }
@@ -33,8 +35,9 @@ export class SettingsPage {
 
   saveForm(){
     let location = {
-      city: this.city,
-      state: this.state
+      country: this.country,
+      city: this.city
+      //state: this.state
 
     }
     this.storage.set('location', JSON.stringify(location));

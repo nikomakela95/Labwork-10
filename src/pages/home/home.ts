@@ -11,8 +11,9 @@ import { Storage } from '@ionic/storage';
 export class HomePage {
   weather:any;
   location:{
+    country:string;
     city:string,
-    state:string
+    //state:string
   }
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private weatherProvider:WeatherProvider, private storage:Storage) {
@@ -25,11 +26,12 @@ export class HomePage {
       this.location = JSON.parse(val);
      }else{
 this.location ={
-  city: 'Miami',
-  state: 'FL'
+  country: 'Finland',
+  city: 'Espoo'
+  
 }
      }
-     this.weatherProvider.getWeather(this.location.city, this.location.state).subscribe(weather=> {
+     this.weatherProvider.getWeather(this.location.country, this.location.city).subscribe(weather=> {
       this.weather = weather.current_observation;
      });
 

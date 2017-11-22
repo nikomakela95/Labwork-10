@@ -13,8 +13,8 @@ export class WeatherProvider {
     this.url = 'http://api.wunderground.com/api/'+this.apiKey+'/conditions/q'
   }
 
-  getWeather(city, state){
-    return this.http.get(this.url+'/'+state+'/'+city+'.json')
+  getWeather(country, city){
+    return this.http.get(this.url+'/'+country+'/'+city+'.json')
     .map(res => res.json());
     }
 
