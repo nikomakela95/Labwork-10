@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { HomePage } from '../home/home';
 
-
+//<!--Niko Mäkelä 1601538, Matias Rantanen 1601551-->
 @IonicPage()
 @Component({
   selector: 'page-settings',
@@ -12,19 +12,19 @@ import { HomePage } from '../home/home';
 export class SettingsPage {
   country:string;
   city:string;
-  //state:string;
+  
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage:Storage ) {
     this.storage.get('location').then((val) =>{
       if(val != null){
         let location = JSON.parse(val);
-        //this.country = location.country;
+        
         this.city = location.city;
-        //this.state = location.state;
+        
       }else{
         this.country = 'Finland';
         this.city = 'Espoo';
-        //this.state = 'FL';
+        
       }
     })
   }
@@ -32,12 +32,12 @@ export class SettingsPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad SettingsPage');
   }
-
+//set new location which user gave
   saveForm(){
     let location = {
       country: this.country,
       city: this.city
-      //state: this.state
+      
 
     }
     this.storage.set('location', JSON.stringify(location));

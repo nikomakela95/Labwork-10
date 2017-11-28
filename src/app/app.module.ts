@@ -1,3 +1,5 @@
+
+//<!--Niko Mäkelä 1601538, Matias Rantanen 1601551-->
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';

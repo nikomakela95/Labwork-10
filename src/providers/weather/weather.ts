@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
-
+// Provider for weather infos
 @Injectable()
 export class WeatherProvider {
   apiKey = '294286f3174bece8';
